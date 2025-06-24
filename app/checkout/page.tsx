@@ -30,28 +30,28 @@ const mockCartItems: CartItem[] = [
   {
     id: 1,
     name: "Wireless Bluetooth Headphones",
-    price: 79.99,
+    price: 2000,
     quantity: 1,
-    image: "/placeholder.svg?height=100&width=100",
+    image: "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Rockerz_551_ANC_Pro.347_1.jpg?v=1737546044",
     color: "Black",
   },
   {
     id: 2,
     name: "Premium Cotton T-Shirt",
-    price: 24.99,
+    price: 150,
     quantity: 2,
-    image: "/placeholder.svg?height=100&width=100",
+    image: "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/22112292/2024/11/8/313a36ea-386e-4e0d-93d6-da3055198f851731084492415-Arrow-Slim-Fit-Cotton-Formal-Shirt-7841731084491903-1.jpg",
     size: "M",
     color: "Navy",
   },
   {
     id: 3,
     name: "Smart Fitness Watch",
-    price: 199.99,
+    price: 3000,
     quantity: 1,
-    image: "/placeholder.svg?height=100&width=100",
+    image: "https://cdn.thewirecutter.com/wp-content/media/2023/06/fitnesstrackers-2048px-09819-2x1-1.jpg",
     color: "Silver",
-  },
+  }
 ]
 
 export default function CheckoutPage() {
@@ -218,198 +218,8 @@ export default function CheckoutPage() {
             </CardContent>
           </Card>
 
-          {/* Shipping Information */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Truck className="w-5 h-5" />
-                Shipping Information
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      value={shippingInfo.firstName}
-                      onChange={handleShippingChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      value={shippingInfo.lastName}
-                      onChange={handleShippingChange}
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={shippingInfo.email}
-                      onChange={handleShippingChange}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={shippingInfo.phone}
-                      onChange={handleShippingChange}
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div>
-                  <Label htmlFor="address">Address</Label>
-                  <Input
-                    id="address"
-                    name="address"
-                    value={shippingInfo.address}
-                    onChange={handleShippingChange}
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <Label htmlFor="city">City</Label>
-                    <Input id="city" name="city" value={shippingInfo.city} onChange={handleShippingChange} required />
-                  </div>
-                  <div>
-                    <Label htmlFor="state">State</Label>
-                    <Select
-                      value={shippingInfo.state}
-                      onValueChange={(value) => setShippingInfo((prev) => ({ ...prev, state: value }))}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select state" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="CA">California</SelectItem>
-                        <SelectItem value="NY">New York</SelectItem>
-                        <SelectItem value="TX">Texas</SelectItem>
-                        <SelectItem value="FL">Florida</SelectItem>
-                        <SelectItem value="IL">Illinois</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="zipCode">ZIP Code</Label>
-                    <Input
-                      id="zipCode"
-                      name="zipCode"
-                      value={shippingInfo.zipCode}
-                      onChange={handleShippingChange}
-                      required
-                    />
-                  </div>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* Payment Information */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <CreditCard className="w-5 h-5" />
-                Payment Information
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="card" id="card" />
-                  <Label htmlFor="card" className="flex items-center gap-2">
-                    <CreditCard className="w-4 h-4" />
-                    Credit/Debit Card
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="paypal" id="paypal" />
-                  <Label htmlFor="paypal" className="flex items-center gap-2">
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.26-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.75.75 0 0 0-.741.633l-1.398 8.864a.641.641 0 0 0 .633.74h4.606a.75.75 0 0 0 .741-.633l.131-.828.858-5.431a.75.75 0 0 1 .741-.633h.464c3.64 0 6.499-1.479 7.327-5.75.347-1.79.213-3.292-.587-4.35z" />
-                    </svg>
-                    PayPal
-                  </Label>
-                </div>
-              </RadioGroup>
-
-              {paymentMethod === "card" && (
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="cardNumber">Card Number</Label>
-                    <Input
-                      id="cardNumber"
-                      name="cardNumber"
-                      placeholder="1234 5678 9012 3456"
-                      value={cardInfo.cardNumber}
-                      onChange={handleCardChange}
-                      required
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="expiryDate">Expiry Date</Label>
-                      <Input
-                        id="expiryDate"
-                        name="expiryDate"
-                        placeholder="MM/YY"
-                        value={cardInfo.expiryDate}
-                        onChange={handleCardChange}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="cvv">CVV</Label>
-                      <Input
-                        id="cvv"
-                        name="cvv"
-                        placeholder="123"
-                        value={cardInfo.cvv}
-                        onChange={handleCardChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <Label htmlFor="cardName">Name on Card</Label>
-                    <Input
-                      id="cardName"
-                      name="cardName"
-                      placeholder="John Doe"
-                      value={cardInfo.cardName}
-                      onChange={handleCardChange}
-                      required
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div className="flex items-center space-x-2">
-                <Checkbox id="sameAsShipping" checked={sameAsShipping} onCheckedChange={setSameAsShipping} />
-                <Label htmlFor="sameAsShipping">Billing address same as shipping address</Label>
-              </div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Order Summary Sidebar */}
@@ -422,29 +232,26 @@ export default function CheckoutPage() {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span>Subtotal ({cartItems.length} items)</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>₹{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Shipping</span>
-                  <span>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span>
+                  <span>{shipping === 0 ? "Free" : `₹${shipping.toFixed(2)}`}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Tax</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span>₹{tax.toFixed(2)}</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between text-lg font-bold">
                   <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>₹{total.toFixed(2)}</span>
                 </div>
               </div>
 
               {shipping === 0 && (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                  <div className="flex items-center gap-2 text-green-700">
-                    <Truck className="w-4 h-4" />
-                    <span className="text-sm font-medium">Free shipping on orders over $100!</span>
-                  </div>
+                
                 </div>
               )}
 
@@ -465,7 +272,7 @@ export default function CheckoutPage() {
                 size="lg"
                 disabled={isProcessing}
               >
-                {isProcessing ? "Processing..." : `Place Order - $${total.toFixed(2)}`}
+                {isProcessing ? "Processing..." : `Place Order - ₹${total.toFixed(2)}`}
               </Button>
 
               <p className="text-xs text-gray-500 text-center">

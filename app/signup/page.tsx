@@ -111,7 +111,7 @@ export default function SignupPage() {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900">Create your account</h2>
-          <p className="mt-2 text-gray-600">Join ShopHub today</p>
+          <p className="mt-2 text-gray-600">Join Dhruv Commerce today</p>
         </div>
 
         <Card>

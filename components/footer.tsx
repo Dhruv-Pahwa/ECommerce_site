@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">ShopHub</h3>
+            <h3 className="text-xl font-bold mb-4">Dhruv Commerce</h3>
             <p className="text-gray-400 mb-4">
               Your trusted online shopping destination for quality products at great prices.
             </p>
@@ -81,24 +81,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
-            <p className="text-gray-400 mb-4">Subscribe to get updates on new products and offers.</p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-3 py-2 bg-gray-800 text-white rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition-colors">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 ShopHub. All rights reserved.</p>
+          <p>&copy; Dhruv commerce</p>
         </div>
       </div>
     </footer>

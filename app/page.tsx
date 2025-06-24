@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Welcome to ShopHub</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Welcome to Dhruv Commerce</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Discover amazing products at unbeatable prices. Your one-stop shop for everything you need.
           </p>
@@ -22,6 +23,18 @@ export default function HomePage() {
             >
               <Link href="/login">Sign In</Link>
             </Button>
+          </div>
+          
+          {/* Hero Image Section */}
+          <div className="mt-12 max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="https://assets.hermes.com/is/image/hermesedito/P_169_C_BIRKIN_HEADER?wid=1200" 
+              alt="Dhruv Commerce Products"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-cover"
+              priority
+            />
           </div>
         </div>
 

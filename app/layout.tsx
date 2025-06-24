@@ -8,9 +8,8 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "ShopHub - Your Online Shopping Destination",
+  title: "Dhruv Commerce",
   description: "Discover amazing products at unbeatable prices. Your one-stop shop for everything you need.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
